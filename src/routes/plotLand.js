@@ -26,9 +26,9 @@ router.get('/plotLand/:id', (req,res)=>{
 });
 router.put('/plotLand/:id', (req,res)=>{
     const {id} = req.params;
-    const {date, activityType, supplies, duration} = req.body;
+    const {name, location, plantCultivation} = req.body;
     plotLandSchema
-    .updateOne({_id: id},{ $set: {date, activityType, supplies, duration}})
+    .updateOne({_id: id},{ $set: {name, location, plantCultivation}})
     .then((data)=> res.json(data))
     .catch((error)=> res.json({message: error}))
 });

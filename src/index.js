@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); 
 require('dotenv').config();
 const agronomicActivityRoutes = require("./routes/agronomicActivity");
 const plotLandRoutes = require("./routes/plotLand");
@@ -8,6 +9,7 @@ const port = process.env.PORT || 9000;
 
 
 //middleware
+app.use(cors());
 app.use(express.json());
 app.use('/api', agronomicActivityRoutes);
 app.use('/api', plotLandRoutes);

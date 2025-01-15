@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "9000:9000"  
+
+  front:
+    build: Cliente/.
+    ports:
+      - "9050:9050" 
